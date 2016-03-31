@@ -5,15 +5,20 @@ var react = require('gulp-react');
 var htmlreplace = require('gulp-html-replace');
 
 var path = {
-  HTML: 'src/index.html',
-  ALL: ['src/js/*.js', 'src/js/**/*.js', 'src/index.html'],
-  JS: ['src/js/*.js', 'src/js/**/*.js'],
-  MINIFIED_OUT: 'build.min.js',
-  DEST_SRC: 'dist/src',
-  DEST_BUILD: 'dist/build',
-  DEST: 'dist'
+  HTML: 'app/index.html',
+  JS: ['app/javascript/*.js', 'app/javascript/*.jsx', 'lib/*.js'],
+  MINIFIED_OUT: 'bundle.js',
+  DEST_BUILD: 'dist'
 };
 
+gulp.task('build', function(){
+  gulp.src(path.JS)
+    .pipe(react())
+    .pipe(concat(path.MINIFIED_OUT))
+    .pipe(gulp.dest(path.DEST_BUILD));
+});
+
+/*
 gulp.task('transform', function(){
   gulp.src(path.JS)
     .pipe(react())
@@ -48,4 +53,5 @@ gulp.task('replaceHTML', function(){
 gulp.task('default', ['watch']);
 
 gulp.task('production', ['replaceHTML', 'build']);
+*/
 
