@@ -1,0 +1,22 @@
+{
+  "name": "boilereact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajunge/boilereact.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajunge/boilereact/issues"
+  },
+  "homepage": "https://github.com/ajunge/boilereact#readme",
+  "dependencies": {
+    "eth-lightwallet": "^2.2.5"
+  }
+}
